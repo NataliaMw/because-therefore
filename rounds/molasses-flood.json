@@ -1,0 +1,55 @@
+{
+  "id": "molasses-flood",
+  "title": "The Great Boston Molasses Flood",
+  "blurb": "Boston, 1919: a sticky industrial shortcut becomes a 25-foot wave of molasses. The lesson is less 'dessert is dangerous' and more 'pressure plus bad engineering is extremely persuasive.'",
+  "signatureLine": "History is just a Rube Goldberg machine with paperwork.",
+  "cards": [
+    {
+      "id": "molasses-demand",
+      "text": "Wartime industrial alcohol demand pushes Purity Distilling to store huge amounts of molasses in Boston's North End.",
+      "order": 0,
+      "why": "Molasses was fermented into alcohol for munitions and industry, so the company needed a massive storage tank near the waterfront."
+    },
+    {
+      "id": "molasses-rushed-tank",
+      "text": "A 50-foot-tall tank is built quickly with weak inspection, questionable steel, and no proper water-filled stress test.",
+      "order": 1,
+      "why": "The tank's design and construction left it vulnerable before the disaster day arrived."
+    },
+    {
+      "id": "molasses-warning-leaks",
+      "text": "The tank leaks and groans for years, but the company treats the warning signs like a cosmetic problem.",
+      "order": 2,
+      "why": "Leaks and noises were evidence of structural stress, not harmless mess."
+    },
+    {
+      "id": "molasses-pressure-rise",
+      "text": "In January 1919, a fresh warm delivery and a sudden temperature rise increase pressure inside the already stressed tank.",
+      "order": 3,
+      "why": "More molasses plus expansion and fermentation pressure pushed the flawed tank closer to failure."
+    },
+    {
+      "id": "molasses-rupture",
+      "text": "The rivets and steel fail, and the tank tears open in a violent rupture.",
+      "order": 4,
+      "why": "The tank's accumulated weaknesses finally became a mechanical failure."
+    },
+    {
+      "id": "molasses-wave",
+      "text": "About 2.3 million gallons surge through the streets as a fast, heavy wave that crushes buildings and people.",
+      "order": 5,
+      "why": "The rupture released the stored molasses all at once, turning potential energy into a destructive flood."
+    },
+    {
+      "id": "molasses-lawsuit",
+      "text": "After 21 deaths, investigators blame structural failure, victims win damages, and engineering certification rules get stronger.",
+      "order": 6,
+      "why": "The legal aftermath connected bad engineering to public harm and helped push modern safety oversight."
+    }
+  ],
+  "trap": {
+    "id": "molasses-anarchist-rumor",
+    "text": "Rumors spread that anarchists bombed the tank.",
+    "whyNotCause": "The rumor was a dramatic explanation, but investigators found the real cause in construction, pressure, and ignored warning signs."
+  }
+}

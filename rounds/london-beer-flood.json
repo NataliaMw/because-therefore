@@ -1,0 +1,55 @@
+{
+  "id": "london-beer-flood",
+  "title": "The London Beer Flood",
+  "blurb": "London, 1814: a brewery vat fails, other vats join the bit, and a neighborhood gets hit by a lethal wave of porter.",
+  "signatureLine": "The domino effect, but make it carbonated.",
+  "cards": [
+    {
+      "id": "beer-giant-vat",
+      "text": "Horse Shoe Brewery stores porter in enormous wooden vats held together by heavy iron hoops.",
+      "order": 0,
+      "why": "The huge containers concentrated a massive amount of liquid energy in one place."
+    },
+    {
+      "id": "beer-hoop-breaks",
+      "text": "On October 17, 1814, one of the iron hoops on a giant vat breaks.",
+      "order": 1,
+      "why": "A failed hoop weakened the structure that kept the pressurized beer contained."
+    },
+    {
+      "id": "beer-vat-bursts",
+      "text": "The damaged vat bursts and releases a huge volume of porter at once.",
+      "order": 2,
+      "why": "Once the container failed, the beer escaped with enough force to become destructive."
+    },
+    {
+      "id": "beer-domino-vats",
+      "text": "The blast knocks open other vats, multiplying the flood.",
+      "order": 3,
+      "why": "One failure caused nearby storage failures, turning a spill into a chain reaction."
+    },
+    {
+      "id": "beer-street-wave",
+      "text": "A wave of beer pours through the brewery wall into the crowded St Giles neighborhood.",
+      "order": 4,
+      "why": "The escaping liquid found the path of least resistance straight into nearby streets and homes."
+    },
+    {
+      "id": "beer-cellars-collapse",
+      "text": "Basements and rooms flood, walls collapse, and eight people die.",
+      "order": 5,
+      "why": "The flood was dangerous because it hit cramped housing and below-street spaces."
+    },
+    {
+      "id": "beer-verdict",
+      "text": "A jury calls the disaster an accident, and the brewery receives a tax refund for the lost beer.",
+      "order": 6,
+      "why": "The official aftermath shows how differently industrial responsibility was treated at the time."
+    }
+  ],
+  "trap": {
+    "id": "beer-wake-rumor",
+    "text": "A crowded neighborhood wake was happening nearby that afternoon.",
+    "whyNotCause": "It may explain why people were gathered in one place, but it did not cause the vat, hoop, wall, or flood to fail."
+  }
+}

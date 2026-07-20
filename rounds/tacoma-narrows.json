@@ -1,0 +1,55 @@
+{
+  "id": "tacoma-narrows",
+  "title": "Tacoma Narrows Bridge: Galloping Gertie",
+  "blurb": "Washington, 1940: a beautiful bridge decides the wind is its dance partner, then immediately regrets the choreography.",
+  "signatureLine": "Never let a bridge freestyle without adult supervision.",
+  "cards": [
+    {
+      "id": "tacoma-slender-design",
+      "text": "Budget and design choices produce an unusually slender bridge deck with shallow plate girders instead of a deep stiff truss.",
+      "order": 0,
+      "why": "The bridge looked sleek, but the deck had too little torsional stiffness for the winds it would face."
+    },
+    {
+      "id": "tacoma-flexible-span",
+      "text": "The long, light span opens in July 1940 and soon earns the nickname 'Galloping Gertie' because it visibly undulates in wind.",
+      "order": 1,
+      "why": "Early vertical motion showed the bridge and wind were already interacting in unstable ways."
+    },
+    {
+      "id": "tacoma-steady-wind",
+      "text": "On November 7, a steady wind around 40 mph hits the bridge deck.",
+      "order": 2,
+      "why": "The wind supplied the energy that started the final destructive motion."
+    },
+    {
+      "id": "tacoma-flutter",
+      "text": "The deck begins torsional aeroelastic flutter: twisting changes the airflow, and the airflow feeds the twisting.",
+      "order": 3,
+      "why": "This self-feeding loop, not a simple one-time shove, made the motion grow."
+    },
+    {
+      "id": "tacoma-motion-grows",
+      "text": "The twisting grows so large that parts of the deck reach extreme angles.",
+      "order": 4,
+      "why": "The flutter transferred wind energy into larger and larger structural motion."
+    },
+    {
+      "id": "tacoma-failure",
+      "text": "Suspenders and deck sections fail, and the center span breaks apart into Puget Sound.",
+      "order": 5,
+      "why": "The bridge could not survive the repeated torsional stress."
+    },
+    {
+      "id": "tacoma-wind-tunnels",
+      "text": "Bridge engineers make aerodynamic testing and wind-tunnel studies standard for major spans.",
+      "order": 6,
+      "why": "The collapse changed the profession's understanding of wind as a design problem."
+    }
+  ],
+  "trap": {
+    "id": "tacoma-resonance-myth",
+    "text": "The bridge collapsed because wind matched one exact natural frequency, like a singer breaking a glass.",
+    "whyNotCause": "That common story confuses correlation with cause. The key mechanism was self-exciting aeroelastic flutter, not simple resonance."
+  }
+}

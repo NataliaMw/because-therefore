@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Because, Therefore</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="topbar" aria-label="Game header">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <h1>Because, Therefore</h1>
+        <p>Scramble history. Rebuild causation. Humble the trap card.</p>
+      </div>
+      <div class="room-pill" id="roomPill">No room yet</div>
+    </section>
+
+    <section id="app" class="app" aria-live="polite"></section>
+  </main>
+
+  <template id="lobbyTemplate">
+    <div class="lobby-grid">
+      <section class="panel play-panel">
+        <div class="panel-kicker">Apps for your life · party mode</div>
+        <h2>The one-line hook: Cards Against Causality.</h2>
+        <p class="lead">Race friends, or bots with suspicious confidence, to rebuild a true because→therefore chain from real history.</p>
+        <div class="name-row">
+          <label for="playerName">Player name</label>
+          <input id="playerName" maxlength="32" autocomplete="name" placeholder="Natalia">
+        </div>
+        <div class="button-row">
+          <button class="primary" id="quickPlayBtn">Quick Play / Solo</button>
+          <button id="createRoomBtn">Create Room</button>
+        </div>
+      </section>
+
+      <section class="panel join-panel">
+        <h2>Join a room</h2>
+        <div class="join-row">
+          <input id="roomCodeInput" maxlength="4" placeholder="ABCD" aria-label="Room code">
+          <button id="joinRoomBtn">Join</button>
+        </div>
+        <p class="hint">Short polling keeps everyone synced. No accounts, no build step, no ceremony.</p>
+      </section>
+
+      <section class="panel custom-panel">
+        <h2>Make your own round</h2>
+        <p>Type a historical disaster, fiasco, product launch, sports meltdown, or absurd chain reaction.</p>
+        <div class="topic-row">
+          <input id="topicInput" maxlength="120" placeholder="The Suez Canal blockage">
+          <button class="hot" id="topicQuickBtn">Generate & Play</button>
+        </div>
+        <p class="hint">With an API key this calls GPT-5.6. Without one, the app clearly falls back to a built-in round.</p>
+      </section>
+    </div>
+  </template>
+
+  <template id="waitingTemplate">
+    <div class="waiting-layout">
+      <section class="panel">
+        <div class="panel-kicker">Room <span data-room-code></span></div>
+        <h2>Lobby</h2>
+        <p class="lead">Share the code, then start a round when the table is ready.</p>
+        <div class="button-row">
+          <button class="primary" id="startRoundBtn">Start Built-In Round</button>
+          <button id="copyCodeBtn">Copy Code</button>
+        </div>
+        <div class="topic-row spaced">
+          <input id="lobbyTopicInput" maxlength="120" placeholder="Or generate a round about...">
+          <button class="hot" id="lobbyTopicBtn">Generate</button>
+        </div>
+      </section>
+      <aside class="panel">
+        <h2>Players</h2>
+        <div id="playerList" class="player-list"></div>
+      </aside>
+    </div>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
