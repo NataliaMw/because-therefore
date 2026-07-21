@@ -177,6 +177,22 @@ function getRoundByIndex(index) {
   return clone(builtInRounds[Math.abs(index) % builtInRounds.length]);
 }
 
+function getOfflineRoundForTopic(topic, reason) {
+  const safeTopic = cleanString(topic, 'offline round', 120);
+  const index = Math.abs(Buffer.from(safeTopic).reduce((sum, byte) => sum + byte, 0)) % builtInRounds.length;
+  const round = getRoundByIndex(index);
+  round.source = reason === 'no-key' ? 'offline-mode' : 'offline-fallback';
+  return {
+    round,
+    generated: false,
+    fallback: true,
+    reason,
+    message: reason === 'no-key'
+      ? 'Offline mode - using a built-in round. GPT-5.6 generation is available with OPENAI_API_KEY.'
+      : 'Generation had a problem, so a built-in round was loaded.'
+  };
+}
+
 function scoreChain(round, chain) {
   const expected = new Map(round.cards.map(card => [card.id, card.order]));
   const selected = Array.isArray(chain) ? chain.slice(0, round.cards.length).map(String) : [];
@@ -429,6 +445,9 @@ async function openAIJSON(name, system, user, schema, timeoutMs) {
 
 async function generateRound(topic) {
   const safeTopic = cleanString(topic, 'a surprising real chain-reaction event', 120);
+  if (!API_KEY) {
+    return getOfflineRoundForTopic(safeTopic, 'no-key');
+  }
   try {
     const raw = await openAIJSON(
       'because_therefore_round',
@@ -449,10 +468,7 @@ async function generateRound(topic) {
     return { round, generated: true, fallback: false };
   } catch (err) {
     console.warn(`[because-therefore] generateRound fallback: ${err.message}`);
-    const index = Math.abs(Buffer.from(safeTopic).reduce((sum, byte) => sum + byte, 0)) % builtInRounds.length;
-    const round = getRoundByIndex(index);
-    round.source = API_KEY ? 'offline-fallback-after-api-error' : 'offline-fallback-no-key';
-    return { round, generated: false, fallback: true, error: err.message };
+    return getOfflineRoundForTopic(safeTopic, 'api-error');
   }
 }
 
@@ -551,7 +567,8 @@ async function handleAPI(req, res) {
         return json(res, 200, {
           generated: result.generated,
           fallback: result.fallback,
-          error: result.fallback ? result.error : null,
+          reason: result.reason || null,
+          message: result.message || null,
           room: publicRoom(room)
         });
       }

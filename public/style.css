@@ -296,6 +296,21 @@ h2 {
   white-space: nowrap;
 }
 
+.source-badge.offline {
+  background: #fff6cf;
+  color: #5f3c00;
+}
+
+.offline-note {
+  margin: -4px 0 14px;
+  border: 2px solid var(--line-strong);
+  border-radius: 8px;
+  background: #fff6cf;
+  padding: 10px 12px;
+  color: #5f3c00;
+  font-weight: 900;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: minmax(260px, 0.82fr) minmax(360px, 1.18fr);

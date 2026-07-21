@@ -37,7 +37,7 @@ Fast demo path:
 
 The game runs fully without an API key. Multiplayer rooms, Quick Play, bots, scoring, reveal animations, and the built-in rounds all work offline.
 
-If a player asks for a custom topic without `OPENAI_API_KEY`, the server labels the result as an offline fallback and loads a built-in round so the demo never breaks.
+If a player asks for a custom topic without `OPENAI_API_KEY`, the server labels the result as offline mode and deterministically loads a built-in round so the demo never breaks or shows a key-related error.
 
 ## With-Key Behavior
 
@@ -49,7 +49,7 @@ OPENAI_API_KEY=your_key_here node server.js
 
 Then use the “Make your own round” input with any topic, such as `The Suez Canal blockage` or `The Mars Climate Orbiter`.
 
-## How GPT-5.6 Is Used
+## How GPT-5.6 Was Used
 
 The core GPT-powered feature is:
 
